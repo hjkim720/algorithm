@@ -1,0 +1,1 @@
+print('AKARAKA'+(int(input())-1)*'RAKA')
