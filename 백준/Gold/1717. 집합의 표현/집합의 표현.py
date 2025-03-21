@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 def find(x):
     if parent[x]!=x:
         parent[x]=find(parent[x])
