@@ -9,11 +9,12 @@ def union(x,y):
     ref_y=find(y)
     if ref_x==ref_y:
         return
+    
     else:
         if size[ref_x]>size[ref_y]:
             ref_x,ref_y=ref_y,ref_x
-        size[ref_x]+=size[ref_y]
-        parent[ref_y]=ref_x
+        size[ref_y]+=size[ref_x]
+        parent[ref_x]=ref_y
 N=int(input())
 parent=list(range(N+1))
 info=[]
