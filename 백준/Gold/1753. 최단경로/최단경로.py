@@ -1,4 +1,6 @@
 import heapq
+import sys
+input=sys.stdin.readline
 def dijkstra(start_node):
     pq = [(0, start_node)]  # (누적거리, 노드번호)
     dists = [float('inf')] * (N+1) # 각 정점까지의 최단거리를 저장할 리스트
