@@ -1,3 +1,5 @@
+import sys
+input=sys.stdin.readline
 def find(x):
     if parent[x]!=x:
         parent[x]=find(parent[x])
@@ -17,5 +19,4 @@ for _ in range(N-2):
     u,v=map(int,input().split())
     if find(u)!=find(v):
         union(u,v)
-res=set(find(x) for x in range(1, N+1))
-print(*res)
+print(*set(find(x) for x in range(1, N+1)))
