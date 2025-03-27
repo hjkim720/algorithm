@@ -1,28 +1,27 @@
 from collections import deque
-
-def bfs(A, B):
-    q = deque() 
-    q.append((A,0))
+def bfs():
+    q = deque()
+    q.append(N)
+    visited = [10 ** 6 + 1] * (N+1)
+    visited[N] = 0
     while q:
-        num, count = q.popleft()
-        
-        if num == B:
-            return count
-        if num%3==0:
-            next1 = num//3
-        else:
-            next1=-1
-        if num%2==0:
-            next2=num//2
-        else:
-            next2 = -1
-        next3 = num-1
-        
-        if next1 >= B:
-            q.append((next1, count + 1))
-        if next2 >= B:
-            q.append((next2, count + 1))
-        if next3>=B:
-            q.append((next3,count + 1))
-A=int(input())
-print(bfs(A, 1))
+        t = q.popleft()
+        if t == 1:
+            return visited[t]
+        if t % 3 == 0:
+            w = t // 3
+            if visited[w] > visited[t] + 1:
+                q.append(w)
+                visited[w] = visited[t] + 1
+        if t % 2 == 0:
+            w = t // 2
+            if visited[w] > visited[t] + 1:
+                q.append(w)
+                visited[w] = visited[t] + 1
+        w = t - 1
+        if visited[w] > visited[t] + 1:
+            q.append(w)
+            visited[w] = visited[t] + 1
+
+N = int(input())
+print(bfs())
