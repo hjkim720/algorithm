@@ -1,5 +1,4 @@
 import sys
-sys.setrecursionlimit(800000)
 input=sys.stdin.readline
 def find(x):
     if parent[x] != x:
@@ -30,8 +29,6 @@ for i in range(1, N):
         last_x2=max(cur_x2,last_x2)
     else:
         last_x1,last_x2=cur_x1,cur_x2
-
-
 for _ in range(Q):
     s, e = map(int, input().split())
     print(1 if find(s) == find(e) else 0)
