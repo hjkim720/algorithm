@@ -1,3 +1,5 @@
+import sys
+input=sys.stdin.readline
 N,M = map(int,input().split())
 activated=list(map(int,input().split()))
 deactivated=list(map(int,input().split()))
