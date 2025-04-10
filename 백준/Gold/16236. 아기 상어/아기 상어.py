@@ -1,5 +1,6 @@
 from collections import deque
-
+import sys
+input=sys.stdin.readline
 dir = ((-1, 0), (0, -1), (0, 1),(1, 0) )
 
 def find_shark():
