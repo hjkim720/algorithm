@@ -1,6 +1,6 @@
-from copy import deepcopy
 from itertools import combinations
-
+import sys
+input=sys.stdin.readline
 def virus(t):
     q=[]
     cnt=0
@@ -37,7 +37,7 @@ for i in range(N):
                 z.append([i,j])
 choices=list(combinations(z,3))
 for i in choices:
-    temp_lab=deepcopy(lab) 
+    temp_lab=list(row[:] for row in lab)
     for j in range(3):
         temp_lab[i[j][0]][i[j][1]]=1  
     result.append(virus(temp_lab))
