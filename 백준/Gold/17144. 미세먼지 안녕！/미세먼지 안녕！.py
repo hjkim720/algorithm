@@ -1,5 +1,6 @@
 from math import floor
-
+import sys
+input=sys.stdin.readline
 R, C, T = map(int, input().split())
 grid = [list(map(int, input().split())) for _ in range(R)]
 
