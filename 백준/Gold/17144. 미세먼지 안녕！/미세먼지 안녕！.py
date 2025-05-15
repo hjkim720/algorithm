@@ -1,5 +1,5 @@
 from math import floor
-from copy import deepcopy
+
 R, C, T = map(int, input().split())
 grid = [list(map(int, input().split())) for _ in range(R)]
 
@@ -63,7 +63,7 @@ for _ in range(T):
                 spread(i, j)
     new[purifier[0][0]][0] = -1
     new[purifier[1][0]][0] = -1
-    grid = deepcopy(new)
+    grid = new
     activate()
 
 res = 0
