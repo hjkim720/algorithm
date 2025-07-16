@@ -1,4 +1,6 @@
 import heapq
+import sys
+input=sys.stdin.readline
 N,K=map(int,input().split())
 bosuks=list(list(map(int,input().split())) for _ in range(N))
 bags=list(int(input()) for _ in range(K))
