@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+N=int(input())
+for i in range(N):
+		A=list(map(int,input().split()))
+		B=list(map(int,input().split()))
+		a=A.pop(0)
+		b=B.pop(0)
+		A.sort(reverse=True)
+		B.sort(reverse=True)
+		for i in range(min(a,b)):
+			if A[i]>B[i]:
+				print('A')
+				break
+			elif A[i]<B[i]:
+				print('B')
+				break
+		else:
+				if a>b:
+					print('A')
+				elif a<b:
+					print('B')
+				else:
+					print('D')
