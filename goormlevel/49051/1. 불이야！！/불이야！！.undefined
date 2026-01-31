@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+from collections import deque
+N,M=map(int,input().split())
+grid=list(list(input().strip()) for _ in range(N))
+def s_loc():
+	for i in range(N):
+		for j in range(M):
+			if grid[i][j]=='&':
+				return (i,j)
+def fire_loc():
+	fires=[]
+	for i in range(N):
+		for j in range(M):
+			if grid[i][j]=='@':
+				fires.append((i,j))
+	return fires
+si,sj=s_loc()
+fires=fire_loc()
+dir = ((1,0),(0,1),(0,-1),(-1,0))
+def bfs(si,sj):
+	q=deque()
+	q.append((si,sj))
+	visited=[[0]*M for _ in range(N)]
+	visited[si][sj]=1
+	while q:
+		ti,tj=q.popleft()
+		if (ti,tj) in fires:
+			return visited[ti][tj]-2
+		for d in dir:
+			wi,wj=ti+d[0],tj+d[1]
+			if 0<=wi<N and 0<=wj<M and grid[wi][wj] != '#' and not visited[wi][wj]:
+				visited[wi][wj]=visited[ti][tj]+1
+				q.append((wi,wj))
+	return -1
+print(bfs(si,sj))
+	
