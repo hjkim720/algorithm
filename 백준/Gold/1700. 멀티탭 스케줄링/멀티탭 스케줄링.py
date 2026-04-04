@@ -1,4 +1,6 @@
 from collections import deque
+import sys
+input=sys.stdin.readline
 N, K = map(int,input().split())
 lst=deque(map(int,input().split()))
 occupied=set()
